@@ -1,0 +1,21 @@
+body {
+  font-family: Helvetica;
+  font-size:16px;
+}
+
+.logo {
+  height: 35px;
+  margin-top: 15px;
+}
+
+.navbar-default {
+    background-color: #FFFFFF !important;
+}
+
+.navbar {
+  min-height:72px !important;
+}
+
+.content {
+  margin: 100px 300px 100px 300px;
+}
