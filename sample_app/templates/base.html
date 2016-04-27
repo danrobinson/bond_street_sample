@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Sample Application — {% block page_title %}{% endblock %}</title>
+    <title>Sample Application — {% block title %}{% endblock %}</title>
 
     <!-- Bootstrap -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -26,13 +26,26 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <a href="/"><img class="logo" src="{% static 'images/bondstreet_logo_small.png' %}"></a>
-        {% block nav %}{% endblock %}
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+            <a href="#" class="menu-button dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">&#9776;</a>
+              <ul class="dropdown-menu pull-right">
+                {% block nav %}{% endblock %}
+                {% if request.user.is_authenticated %}
+                  <li><a href="/accounts/logout">Logout</a></li>
+                {% else %}
+                  <li><a href="/accounts/login">Login</a></li>
+                {% endif %}
+              </ul>
+            </li>
+          </ul>
       </div>
     </nav>
 
     <div class="content">
       {% block content %}{% endblock %}
     </div>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

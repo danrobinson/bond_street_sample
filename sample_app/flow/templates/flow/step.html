@@ -1,27 +1,19 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 
+{% block title %}Step {{ step_number }}{% endblock %}
+
 {% block head %}
 <link href="{% static 'css/flow.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block nav %}
-  <ul class="nav navbar-nav navbar-right">
-    <li class="dropdown">
-    <a href="#" class="menu-button dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">&#9776;</a>
-      <ul class="dropdown-menu pull-right">
-        <li><a href="/flow/step/1">Step 1</a></li>
-        <li><a href="/flow/step/2">Step 2</a></li>
-        <li><a href="/flow/step/3">Step 3</a></li>
-        <li><a href="/flow/step/4">Step 4</a></li>
-        <li><a href="/flow/step/5">Step 5</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="#">Logout</a></li>
-      </ul>
-    </li>
-  </ul>
+<li><a href="/flow/step/1">Step 1</a></li>
+<li><a href="/flow/step/2">Step 2</a></li>
+<li><a href="/flow/step/3">Step 3</a></li>
+<li><a href="/flow/step/4">Step 4</a></li>
+<li><a href="/flow/step/5">Step 5</a></li>
+<li role="separator" class="divider"></li>
 {% endblock %}
-
-{% block page_title %}Step {{ step_number }}{% endblock %}
 
 {% block content %}Step {{ step_number }}{% endblock %}

@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'flow'
+    'flow',
+    'accounts',
+    'registration',
+    'bootstrapform',
 ]
 
 MIDDLEWARE_CLASSES = [
