@@ -1,7 +1,5 @@
 from django.contrib import admin
-from .models import Step, CompletedStep
+from .models import Step, UserStep
 
 admin.site.register(Step)
-admin.site.register(CompletedStep)
-
-# Register your models here.
+admin.site.register(UserStep)
