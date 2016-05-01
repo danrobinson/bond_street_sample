@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block dropdown %}
+{% for each_user_step in user_steps %}
+<li>
+  <a href="{{ each_user_step.get_absolute_url }}">
+    {{ each_user_step.step }}</span>
+  </a>
+</li>
+{% endfor %}
+{% if user_steps %}<li role="separator" class="divider"></li>{% endif %}
+{% endblock %}

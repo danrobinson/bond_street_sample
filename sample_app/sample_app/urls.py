@@ -13,5 +13,5 @@ urlpatterns = [
     url(r'^accounts/', include(accounts_urls)),
     url(r'^favicon.ico', 
         RedirectView.as_view(url=settings.STATIC_URL + 'favicon.ico')),
-    url(r'^$', RedirectView.as_view(url=reverse_lazy('profile')))
+    url(r'^$', RedirectView.as_view(url=reverse_lazy('flow_index')))
 ]

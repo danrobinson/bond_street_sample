@@ -32,7 +32,7 @@
             <li class="dropdown">
             <a href="#" class="menu-button dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">&#9776;</a>
               <ul class="dropdown-menu pull-right">
-                {% block nav %}{% endblock %}
+                {% block dropdown %}{% endblock %}
                 {% if request.user.is_authenticated %}
                   <li><a href="/accounts/logout">Logout</a></li>
                 {% else %}

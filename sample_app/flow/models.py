@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
 class Step(models.Model):
+    """Model for a single step."""
     number = models.IntegerField(primary_key=True)
 
     class Meta:
@@ -11,11 +12,9 @@ class Step(models.Model):
     def __unicode__(self):
         return "Step " + str(self.number)
 
-    def get_absolute_url(self):
-        return reverse("step", args=(self.number,))
-
 
 class UserStep(models.Model):
+    """Model for a single user's progress on a particular step."""
     user = models.ForeignKey(User)
     step = models.ForeignKey(Step)
     completed = models.BooleanField(default=False)
@@ -26,4 +25,4 @@ class UserStep(models.Model):
         return result
 
     def get_absolute_url(self):
-        return self.step.get_absolute_url()
+        return reverse("flow_step", args=(self.step.number,))

@@ -1,28 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'flow/base.html' %}
 {% load i18n %}
-{% load bootstrap %}
 
 {% block title %}Step {{ user_step.step.number }}{% endblock %}
-
-{% block nav %}
-{% for each_user_step in user_steps %}
-<li>
-  <a href="{{ each_user_step.get_absolute_url }}">
-    {{ each_user_step.step }}</span>
-  </a>
-</li>
-{% endfor %}
-<li role="separator" class="divider"></li>
-{% endblock %}
 
 {% block content %}
 
 <h2>{{ user_step.step }}</h2>
 <br />
 <form method="post" action="">
-    {% csrf_token %}
-    <div class="form-group">
-      <button type="submit">{% trans 'Submit' %}</button> <!-- left out class="btn btn-primary" -->
-    </div>
+  {% csrf_token %}
+  <div class="form-group">
+    <button class="btn btn-default" type="submit">{% trans 'Submit' %}</button>
+  </div>
 </form>
+
 {% endblock %}

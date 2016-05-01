@@ -1,0 +1,23 @@
+{% extends 'flow/base.html' %}
+{% load i18n %}
+
+{% block title %}Sample Application{% endblock %}
+
+{% block content %}
+
+<h2>Application Flow{% if completed %} (Complete){% endif %}</h2>
+<br />
+{% if user_steps %}
+  <div class="list-group col-xs-8 col-sm-8 col-md-8 col-lg-8">
+  {% for u_s in user_steps %}
+    <a class="list-group-item list-group-item-{% if u_s.completed %}success{% else %}warning{% endif %}" href="{{ u_s.get_absolute_url }}">
+      {{ u_s.step }} <span class="pull-right glyphicon glyphicon-{% if u_s.completed %}check{% else %}edit{% endif %}"></span>
+    </a>
+  {% endfor %}
+  </div>
+  <a href="{% url 'flow_clear' %}" class="btn btn-default">{% trans 'Clear' %}</a>
+{% else %}
+  <a href="{% url 'flow_start' %}" class="btn btn-default">{% trans 'Start' %}</a>
+{% endif %}
+
+{% endblock %}
