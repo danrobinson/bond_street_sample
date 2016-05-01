@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
+
 class Step(models.Model):
     """Model for a single step."""
     number = models.IntegerField(primary_key=True)
@@ -21,7 +22,8 @@ class UserStep(models.Model):
 
     def __unicode__(self):
         result = unicode(self.user) + "'s " + unicode(self.step)
-        result += " (" + ("completed" if self.completed else "incomplete") + ")"
+        parenthetical = ("completed" if self.completed else "incomplete")
+        result += " (" + parenthetical + ")"
         return result
 
     def get_absolute_url(self):

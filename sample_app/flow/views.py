@@ -1,9 +1,6 @@
-from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import View, ListView, DetailView, TemplateView
-from django.shortcuts import get_object_or_404, render, redirect
-from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.views.generic import View, TemplateView
+from django.shortcuts import get_object_or_404, redirect
 from django.db import transaction
 from .models import Step, UserStep
 
@@ -36,7 +33,7 @@ class StepView(FlowView):
         return render(request, self.template_name, context)
     """
 
-    template_name = 'flow/step.html';
+    template_name = 'flow/step.html'
 
     def get_object(self):
         """Get the step being viewed or modified."""
@@ -72,13 +69,13 @@ class StepView(FlowView):
         else:
             # there are still additional steps to be completed
             # create the next step and redirect the user to it
-            return redirect(UserStep.objects.create(step=later_steps[0], 
-                                                     user=request.user))
+            return redirect(UserStep.objects.create(step=later_steps[0],
+                                                    user=request.user))
 
 
 class IndexView(FlowView):
 
-    template_name = 'flow/index.html';
+    template_name = 'flow/index.html'
 
     def get_context_data(self, **kwargs):
         """Insert a boolean showing whether the application is complete."""
