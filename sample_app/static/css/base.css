@@ -1,0 +1,51 @@
+body {
+  font-family: Helvetica;
+  font-size:16px;
+}
+
+.logo {
+  height: 35px;
+  margin-top: 15px;
+}
+
+.navbar-default {
+    background-color: #FFFFFF !important;
+}
+
+.navbar {
+  min-height:72px !important;
+}
+
+.content {
+  margin-left: 30%;
+  margin-right: 20%;
+}
+
+.menu-button {
+  margin-top: 12px;
+  font-size: 120%;
+}
+
+.navbar-default .nav .dropdown .dropdown-menu {
+    -webkit-border-radius: 5px 5px 5px 5px ;
+    -moz-border-radius: 5px 5px 5px 5px ;
+    border-radius: 5px 5px 5px 5px ;    
+}
+
+.navbar-default .navbar-nav>li>a, 
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav>li>a:hover {
+  color: #000000 !important;
+  background-color: #FFFFFF !important;
+}
+
+.navbar-default .navbar-nav>.open>a, 
+.navbar-default .navbar-nav>.open>a:focus, 
+.navbar-default .navbar-nav>.open>a:hover {
+  color: #000000 !important;
+  background-color: #FFFFFF !important;
+}
+
+.dropdown-menu {
+  right: 15px !important;
+}

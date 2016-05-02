@@ -1,0 +1,17 @@
+{% extends 'flow/base.html' %}
+{% load i18n %}
+
+{% block title %}Step {{ user_step.step.number }}{% endblock %}
+
+{% block content %}
+
+<h2>{{ user_step.step }}</h2>
+<br />
+<form method="post" action="">
+  {% csrf_token %}
+  <div class="form-group">
+    <button class="btn btn-default" type="submit">{% trans 'Submit' %}</button>
+  </div>
+</form>
+
+{% endblock %}
